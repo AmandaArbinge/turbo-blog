@@ -6,6 +6,7 @@ const colors = {
     dark: tailwindDefaultColors.indigo[900],
     medium: tailwindDefaultColors.indigo[500],
     light: tailwindDefaultColors.indigo[300],
+    accent: tailwindDefaultColors.purple[500],
   },
   secondary: {
     default: tailwindDefaultColors.gray[700],
