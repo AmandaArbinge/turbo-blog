@@ -1,3 +1,3 @@
-export * from './TurboPostsFilter/TurboPostsFilter'
-export * from './TurboPostsList/TurboPostsList'
-export * from './TurboPosts/TurboPosts'
+export * from './TurboPostFilter'
+export * from './TurboPostList'
+export * from './TurboPosts'

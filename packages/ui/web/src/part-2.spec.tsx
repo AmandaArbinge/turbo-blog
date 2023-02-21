@@ -1,9 +1,9 @@
 import { render, fireEvent, screen } from '@testing-library/react'
-import { Chip } from '@turbo-blog/web-ui'
+import { Chip, TurboPostsFilter } from '@turbo-blog/web-ui'
 import {
-  TurboPostsFilter,
-  TurboPostsList,
-  TurboPosts,
+  TurboPostFilter,
+  TurboPostList,
+  TurboPost,
 } from '@turbo-blog/web-ui/src/features/turbo-posts'
 import { IFilter, ITurboPost } from '@turbo-blog/types'
 
@@ -20,7 +20,7 @@ describe('Chip', () => {
   })
 })
 
-describe('TurboPostsFilter', () => {
+describe('TurboPostFilter', () => {
   const filters: IFilter[] = [
     {
       title: 'Filter',
@@ -78,7 +78,7 @@ describe('TurboPostsList', () => {
   const handlePostListClick = jest.fn((post) => {})
   it('renders & handles clicks', () => {
     const { queryAllByText } = render(
-      <TurboPostsList
+      <TurboPostList
         posts={mockPosts}
         emptyMessage=""
         onClick={handlePostListClick}
@@ -94,7 +94,7 @@ describe('TurboPostsList', () => {
 describe('TurboPost', () => {
   it('renders', () => {
     const { queryAllByText } = render(
-      <TurboPosts
+      <TurboPost
         content={mockPosts[0].content}
         heading={mockPosts[0].heading}
       />,

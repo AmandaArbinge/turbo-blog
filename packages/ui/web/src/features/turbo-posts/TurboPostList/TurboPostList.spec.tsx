@@ -1,11 +1,11 @@
 import { render, fireEvent, screen, getByText } from '@testing-library/react'
-import { TurboPostsList } from './TurboPostsList'
-import { Postdata } from './TurboPostsListData'
+import { TurboPostList } from './TurboPostList'
+import { Postdata } from './TurboPostListData'
 
 describe('TurboPostsList', () => {
   it('renders', () => {
     const { queryAllByText } = render(
-      <TurboPostsList emptyMessage={'msg'} posts={Postdata} />,
+      <TurboPostList emptyMessage={'msg'} posts={Postdata} />,
     )
     expect(queryAllByText('test')).toHaveLength(1)
   })

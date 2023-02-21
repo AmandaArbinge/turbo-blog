@@ -1,10 +1,10 @@
 import { render, fireEvent, screen } from '@testing-library/react'
-import { TurboPosts } from './TurboPosts'
+import { TurboPost } from './TurboPost'
 
 describe('TurboPosts', () => {
   it('renders', () => {
     const { queryAllByText } = render(
-      <TurboPosts heading={'heading'} content={'Test'} />,
+      <TurboPost heading={'heading'} content={'Test'} />,
     )
     expect(queryAllByText('Test')).toHaveLength(1)
   })

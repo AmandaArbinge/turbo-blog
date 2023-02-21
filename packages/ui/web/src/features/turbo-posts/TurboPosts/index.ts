@@ -1,1 +1,1 @@
-export * from './TurboPosts'
+export * from './TurboPost'

@@ -1,8 +1,9 @@
 import { NextPage } from 'next'
 import React from 'react'
-import { Text, PageLayout } from '@turbo-blog/web-ui'
+import { Text, PageLayout, Button } from '@turbo-blog/web-ui'
 import { useAppSelector, selectExampleValue } from '@turbo-blog/store'
 import { useGetTodosQuery } from '@turbo-blog/api'
+import Link from 'next/link'
 
 const IndexPage: NextPage = () => {
   //get a value from global state
@@ -36,6 +37,9 @@ const IndexPage: NextPage = () => {
               .map((todo) => <li key={todo.id}>{todo.title}</li>)}
         </>
       </Text>
+      <Button>
+        <Link href="/turbo-posts">turbo-posts</Link>
+      </Button>
     </PageLayout>
   )
 }

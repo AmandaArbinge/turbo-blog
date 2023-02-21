@@ -9,5 +9,5 @@
   },
   "exclude": ["node_modules", "src/__test__/**/*"],
   "extends": "@turbo-blog/config/tsconfig/base.json",
-  "include": ["src"]
+  "include": ["src", "../types/src/addTurboPostRequestData.ts"]
 }
