@@ -1,6 +1,7 @@
 import React from 'react'
 import { Chip, TextButton } from '../../../common'
 import { IFilter } from '@turbo-blog/types'
+import clsx from 'clsx'
 
 export interface ITurboPostsFilterProps extends IFilter {
   filters: IFilter[]
@@ -10,30 +11,33 @@ export interface ITurboPostsFilterProps extends IFilter {
 
 export const TurboPostsFilter: React.FC<ITurboPostsFilterProps> = ({
   filters,
+  onToggle,
+  onClear,
   ...rest
 }) => {
-  let selected: boolean = false
+  let selected = false
 
-  const onClear = () => {
-    filters.map((filter: IFilter) => {
-      filter.selected = false
-      return filters
-    })
+  const checkIfTrue = () => {
+    filters.forEach((filter) =>
+      filter.selected === true ? (selected = true) : null,
+    )
+    return selected
   }
 
-  const onToggle = (IFilter: IFilter) => {
-    alert('onToggle!')
-  }
+  const filterClassName = clsx(
+    'align-items: center',
+    'flex space-x-4',
+    'text-center',
+  )
 
   return (
     <>
-      <div className={'flex space-x-4'}>
+      <div className={filterClassName}>
         {filters.map((filter, index) => {
-          if (filter.selected) selected = true
           return (
             <Chip
               key={index}
-              onClick={() => onToggle(filter)}
+              onClick={() => onToggle && onToggle(filter)}
               title={filter.title}
               selected={filter.selected}
               disabled={filter.disabled}
@@ -41,9 +45,11 @@ export const TurboPostsFilter: React.FC<ITurboPostsFilterProps> = ({
           )
         })}
       </div>
-      <div className={'text-center'}>
-        {selected ? (
-          <TextButton onClick={onClear}>Clear all filters</TextButton>
+      <div>
+        {checkIfTrue() ? (
+          <TextButton onClick={() => onClear && onClear()}>
+            Clear all filters{' '}
+          </TextButton>
         ) : null}
       </div>
     </>

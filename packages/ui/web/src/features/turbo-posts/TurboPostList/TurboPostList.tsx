@@ -2,7 +2,6 @@ import React from 'react'
 import { ITurboPost } from '@turbo-blog/types'
 import { TurboPost } from '../TurboPosts'
 import clsx from 'clsx'
-import { useRouter } from 'next/router'
 
 export interface ITurboPostListProps {
   posts: ITurboPost[]
@@ -24,23 +23,25 @@ export const TurboPostList: React.FC<ITurboPostListProps> = ({
   return (
     <>
       <div className={listClassName}>
-        {posts.length === 0 ? (
+        {posts && posts.length === 0 ? (
           <React.Fragment>
             <p>No posts available </p>
           </React.Fragment>
         ) : (
           <>
-            {posts.map((post: ITurboPost) => {
-              return (
-                <div key={post.id} onClick={() => onClick?.(post)}>
-                  <TurboPost
-                    key={post.id}
-                    heading={post.heading}
-                    content={post.content}
-                  />
-                </div>
-              )
-            })}
+            {posts &&
+              posts.map((post: ITurboPost) => {
+                return (
+                  <div key={post.id} onClick={() => onClick?.(post)}>
+                    <TurboPost
+                      key={post.id}
+                      heading={post.heading}
+                      content={post.content}
+                      tags={post.tags}
+                    />
+                  </div>
+                )
+              })}
           </>
         )}
       </div>

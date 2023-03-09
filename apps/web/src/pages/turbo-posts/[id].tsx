@@ -1,9 +1,8 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { GetStaticPaths } from 'next'
 import { Postdata, TurboPost } from '@turbo-blog/web-ui'
 import Head from 'next/head'
 import { ITurboPost } from '@turbo-blog/types'
 import { useRouter } from 'next/router'
-import type { NextPage } from 'next'
 
 const Turbopost = () => {
   const router = useRouter()
@@ -25,6 +24,7 @@ const Turbopost = () => {
               key={post.id}
               heading={post.heading}
               content={post.content}
+              tags={post.tags}
             />
           </div>
         ) : null,
@@ -37,7 +37,6 @@ const Turbopost = () => {
 }
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-  //const post=Postdata.forEach()
   return {
     paths: [],
     fallback: 'blocking',
