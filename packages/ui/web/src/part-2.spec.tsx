@@ -1,10 +1,6 @@
 import { render, fireEvent, screen } from '@testing-library/react'
-import { Chip, TurboPostsFilter } from '@turbo-blog/web-ui'
-import {
-  TurboPostFilter,
-  TurboPostList,
-  TurboPost,
-} from '@turbo-blog/web-ui/src/features/turbo-posts'
+import { Chip } from '@turbo-blog/web-ui'
+import { TurboPostsFilter, TurboPostList, TurboPost } from '.'
 import { IFilter, ITurboPost } from '@turbo-blog/types'
 
 describe('Chip', () => {

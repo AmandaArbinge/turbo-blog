@@ -20,4 +20,5 @@ export const ITurboPosts = Template.bind({})
 ITurboPosts.args = {
   heading: 'hej',
   content: 'lorem ipsum',
+  tags: ['fun', 'popular'],
 }

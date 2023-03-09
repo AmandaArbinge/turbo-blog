@@ -4,7 +4,7 @@ import { TurboPost } from './TurboPost'
 describe('TurboPosts', () => {
   it('renders', () => {
     const { queryAllByText } = render(
-      <TurboPost heading={'heading'} content={'Test'} />,
+      <TurboPost id={1} heading={'heading'} content={'Test'} />,
     )
     expect(queryAllByText('Test')).toHaveLength(1)
   })
