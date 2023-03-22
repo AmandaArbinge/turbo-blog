@@ -1,5 +1,5 @@
 {
-  "name": "@turbo-blog/example-api",
+  "name": "@turbo-blog/turbo-posts-api",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -20,8 +20,8 @@
     "clean:build": "yarn rimraf dist && yarn rimraf .turbo"
   },
   "dependencies": {
-    "@turbo-blog/types": "*",
     "@reduxjs/toolkit": "1.8.5",
+    "@turbo-blog/types": "*",
     "react-redux": "^8"
   },
   "devDependencies": {

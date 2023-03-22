@@ -20,6 +20,7 @@
     "@turbo-blog/api-mocks": "*",
     "@turbo-blog/api": "*",
     "@turbo-blog/example-api": "*",
+    "@turbo-blog/turbo-posts-api": "*",
     "@turbo-blog/store": "*",
     "@turbo-blog/types": "*",
     "@turbo-blog/web-ui": "*",

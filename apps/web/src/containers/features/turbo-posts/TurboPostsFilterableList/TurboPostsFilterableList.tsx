@@ -3,7 +3,6 @@ import { ITurboPost } from '@turbo-blog/types'
 import { TurboPostsFilter } from '@turbo-blog/web-ui'
 import { IFilter } from '@turbo-blog/types'
 import { TurboPostList } from '@turbo-blog/web-ui'
-
 import {
   useAppSelector,
   useAppDispatch,
@@ -26,11 +25,12 @@ export const TurboPostsFilterableList: React.FC<FilterableListProps> = ({
 
   useEffect(() => {
     const tagsArr: string[] = []
-    posts.forEach((post) =>
-      post.tags.forEach((post) =>
-        !tagsArr.includes(post) ? tagsArr.push(post) : null,
-      ),
-    )
+    posts &&
+      posts.forEach((post) =>
+        post.tags.forEach((post) =>
+          !tagsArr.includes(post) ? tagsArr.push(post) : null,
+        ),
+      )
     tagsArr.sort()
     setTags(tagsArr)
   }, [posts])
@@ -52,12 +52,12 @@ export const TurboPostsFilterableList: React.FC<FilterableListProps> = ({
   let filteredList: Array<ITurboPost> = []
 
   const filterList = () => {
-    posts.map((post: ITurboPost, index: number) => {
-      if (selectedTags.selectedTags.every((p) => post.tags.includes(p))) {
-        filteredList.push(post)
-      }
-    })
-    console.log(filteredList)
+    posts &&
+      posts.map((post: ITurboPost) => {
+        if (selectedTags.selectedTags.every((p) => post.tags.includes(p))) {
+          filteredList.push(post)
+        }
+      })
     return filteredList
   }
 

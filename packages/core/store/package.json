@@ -21,8 +21,9 @@
   },
   "dependencies": {
     "@turbo-blog/example-api": "*",
+    "@turbo-blog/turbo-posts-api": "*",
     "@turbo-blog/types": "*",
-    "@reduxjs/toolkit": "^1.3.6",
+    "@reduxjs/toolkit": "1.8.5",
     "next-redux-wrapper": "^7.0.5",
     "react-redux": "^8"
   },

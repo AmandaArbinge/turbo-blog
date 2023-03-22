@@ -1,8 +1,7 @@
 import { NextPage } from 'next'
-import React from 'react'
 import { Text, PageLayout, Button } from '@turbo-blog/web-ui'
 import { useAppSelector, selectExampleValue } from '@turbo-blog/store'
-import { useGetTodosQuery } from '@turbo-blog/api'
+import { useGetTodosQuery } from '@turbo-blog/example-api'
 import Link from 'next/link'
 
 const IndexPage: NextPage = () => {

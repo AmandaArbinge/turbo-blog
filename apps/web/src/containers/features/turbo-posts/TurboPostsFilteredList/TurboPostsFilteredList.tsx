@@ -2,8 +2,6 @@ import { ITurboPost } from '@turbo-blog/types'
 import { useAppSelector, selectTurboPostsSelectedTags } from '@turbo-blog/store'
 import { TurboPostList } from '@turbo-blog/web-ui'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
-import { Postdata } from '@turbo-blog/web-ui'
 
 export interface FilteredListProps {
   posts: ITurboPost[]
@@ -18,12 +16,12 @@ export const TurboPostsFilteredList: React.FC<FilteredListProps> = ({
   let filteredList: Array<ITurboPost> = []
 
   const filterList = () => {
-    posts.map((post: ITurboPost, index: number) => {
-      if (selectedTags.selectedTags.every((p) => post.tags.includes(p))) {
-        filteredList.push(post)
-      }
-    })
-    console.log(filteredList)
+    posts &&
+      posts.map((post: ITurboPost) => {
+        if (selectedTags.selectedTags.every((p) => post.tags.includes(p))) {
+          filteredList.push(post)
+        }
+      })
     return filteredList
   }
 
