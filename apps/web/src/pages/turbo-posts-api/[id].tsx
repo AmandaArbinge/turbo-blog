@@ -1,12 +1,14 @@
 import { GetStaticPaths } from 'next'
-import { Postdata, TurboPost } from '@turbo-blog/web-ui'
+import { TurboPost } from '@turbo-blog/web-ui'
 import Head from 'next/head'
-import { ITurboPost } from '@turbo-blog/types'
 import { useRouter } from 'next/router'
+import { useGetTurboPostQuery } from '@turbo-blog/turbo-posts-api'
 
 const Turbopost = () => {
   const router = useRouter()
+
   const { id } = router.query
+  const { data: post, isLoading, isError } = useGetTurboPostQuery(id as string)
 
   function handleClick() {
     router.push('/turbo-posts')
@@ -18,16 +20,17 @@ const Turbopost = () => {
         <button onClick={handleClick}>Go Back </button>
       </div>
 
-      {Postdata.map((post: ITurboPost) =>
-        post.id.toString() === id.toString() ? (
-          <TurboPost
-            key={post.id}
-            heading={post.heading}
-            content={post.content}
-            tags={post.tags}
-          />
-        ) : null,
+      {isLoading ? <div>Loading...</div> : null}
+      {isError ? <div>An error has occurred!</div> : null}
+      {post && (
+        <TurboPost
+          key={post.id}
+          heading={post.heading}
+          content={post.content}
+          tags={post.tags}
+        />
       )}
+
       <Head>
         <title>{id}</title>
       </Head>

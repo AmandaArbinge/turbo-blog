@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { ITurboPost } from '@turbo-blog/types'
 import { TurboPostsFilter as TurboPostsFilterUI } from '@turbo-blog/web-ui'
 import { IFilter } from '@turbo-blog/types'
-
 import {
   useAppSelector,
   useAppDispatch,
   selectTurboPostsSelectedTags,
   turboPostsActions,
 } from '@turbo-blog/store'
-import { useRouter } from 'next/router'
 
 export interface FilterProps {
   posts: ITurboPost[]
@@ -19,7 +17,6 @@ export const TurboPostsFilter: React.FC<FilterProps> = ({ posts }) => {
   const [tags, setTags] = useState<string[]>([])
   const dispatch = useAppDispatch()
   const selectedTags = useAppSelector(selectTurboPostsSelectedTags)
-  const router = useRouter()
 
   useEffect(() => {
     const tagsArr: string[] = []
