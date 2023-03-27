@@ -1,13 +1,15 @@
-export interface ITurboPostApiResult {
-  posts: Array<ITurboPostApiPosts>
+export interface ITurboPostsApiPostsResult {
+  posts: Array<ITurboPostsApiPost>
   total: number
   skip: number
   limit: number
 }
 
-export interface ITurboPostApiPosts {
+export interface ITurboPostsApiPost {
   id: number
   title: string
   body: string
-  tags?: string[]
+  userId: number
+  tags: string[]
+  reactions: number
 }
