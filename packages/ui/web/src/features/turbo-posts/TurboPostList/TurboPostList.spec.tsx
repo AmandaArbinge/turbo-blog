@@ -1,4 +1,4 @@
-import { render, fireEvent, screen, getByText } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { TurboPostList } from './TurboPostList'
 import { Postdata } from './TurboPostListData'
 

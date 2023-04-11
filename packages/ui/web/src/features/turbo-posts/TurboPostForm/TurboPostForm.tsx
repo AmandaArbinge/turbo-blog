@@ -15,13 +15,7 @@ export const TurboPostForm: React.FC<ITurboPostFormProps> = ({
   isLoading,
   error,
 }) => {
-  const {
-    control,
-    handleSubmit,
-    reset,
-    formState,
-    formState: { isSubmitSuccessful, errors },
-  } = useForm({
+  const { control, handleSubmit, reset, formState } = useForm({
     defaultValues: {
       heading: '',
       content: '',
