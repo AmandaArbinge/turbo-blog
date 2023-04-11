@@ -53,7 +53,7 @@ export const extendedTurboPostsApiSlice = turboPostsApiSlice.injectEndpoints({
             ),
           )
         } catch {
-          console.log('error')
+          alert('error')
         }
       },
     }),

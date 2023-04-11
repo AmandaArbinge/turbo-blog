@@ -4,7 +4,7 @@ import { Button } from '.'
 describe('Button', () => {
   it('renders', () => {
     const { queryAllByText } = render(<Button>Test</Button>)
-    expect(queryAllByText('Test')).toHavdeLength(1)
+    expect(queryAllByText('Test')).toHaveLength(1)
   })
   it('clicks', () => {
     const handleClick = jest.fn()
