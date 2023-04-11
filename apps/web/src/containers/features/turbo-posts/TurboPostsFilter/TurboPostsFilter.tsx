@@ -20,11 +20,15 @@ export const TurboPostsFilter: React.FC<FilterProps> = ({ posts }) => {
 
   useEffect(() => {
     const tagsArr: string[] = []
-    posts?.forEach((post?) =>
-      post?.tags.forEach((post) =>
-        !tagsArr.includes(post) ? tagsArr.push(post) : null,
-      ),
-    )
+    posts &&
+      posts.forEach(
+        (post) =>
+          post &&
+          post.tags &&
+          post.tags.forEach((post) =>
+            !tagsArr.includes(post) ? tagsArr.push(post) : null,
+          ),
+      )
     tagsArr.sort()
     setTags(tagsArr)
   }, [posts])

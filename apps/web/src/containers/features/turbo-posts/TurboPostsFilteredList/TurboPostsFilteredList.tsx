@@ -18,7 +18,11 @@ export const TurboPostsFilteredList: React.FC<FilteredListProps> = ({
   const filterList = () => {
     posts &&
       posts.map((post: ITurboPost) => {
-        if (selectedTags.selectedTags.every((p) => post.tags.includes(p))) {
+        if (
+          selectedTags.selectedTags.every(
+            (p) => post.tags && post.tags.includes(p),
+          )
+        ) {
           filteredList.push(post)
         }
       })

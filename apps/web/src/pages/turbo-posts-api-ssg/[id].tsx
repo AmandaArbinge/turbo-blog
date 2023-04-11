@@ -1,4 +1,4 @@
-import { TurboPost } from '@turbo-blog/web-ui'
+import { TurboPost, Button } from '@turbo-blog/web-ui'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import {
@@ -22,7 +22,7 @@ const Turbopost = () => {
   return (
     <>
       <div>
-        <button onClick={handleClick}>Go Back </button>
+        <Button onClick={handleClick}>Go Back </Button>
       </div>
 
       {isLoading ? <div>Loading...</div> : null}
@@ -35,7 +35,6 @@ const Turbopost = () => {
           tags={post.tags}
         />
       )}
-
       <Head>
         <title>{id}</title>
       </Head>
