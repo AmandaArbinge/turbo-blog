@@ -26,10 +26,12 @@ export const TurboPostsFilterableList: React.FC<FilterableListProps> = ({
   useEffect(() => {
     const tagsArr: string[] = []
     posts &&
-      posts.forEach((post) =>
-        post.tags.forEach((post) =>
-          !tagsArr.includes(post) ? tagsArr.push(post) : null,
-        ),
+      posts.forEach(
+        (post) =>
+          post.tags &&
+          post.tags.forEach((post) =>
+            !tagsArr.includes(post) ? tagsArr.push(post) : null,
+          ),
       )
     tagsArr.sort()
     setTags(tagsArr)
@@ -54,7 +56,11 @@ export const TurboPostsFilterableList: React.FC<FilterableListProps> = ({
   const filterList = () => {
     posts &&
       posts.map((post: ITurboPost) => {
-        if (selectedTags.selectedTags.every((p) => post.tags.includes(p))) {
+        if (
+          selectedTags.selectedTags.every(
+            (p) => post.tags && post.tags.includes(p),
+          )
+        ) {
           filteredList.push(post)
         }
       })

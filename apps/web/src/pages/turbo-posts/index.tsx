@@ -1,13 +1,18 @@
-import { Postdata } from '@turbo-blog/web-ui'
+import { Button, Postdata } from '@turbo-blog/web-ui'
 import {
   TurboPostsFilteredList,
   TurboPostsFilter,
 } from 'containers/features/turbo-posts'
 import Head from 'next/head'
+import Link from 'next/link'
 
 const TurboPosts = ({ posts }) => {
   return (
     <>
+      <Button>
+        <Link href="/turbo-posts-api/add">Add Turbo Post</Link>
+      </Button>
+
       <Head>
         <title>Turbo Posts</title>
       </Head>

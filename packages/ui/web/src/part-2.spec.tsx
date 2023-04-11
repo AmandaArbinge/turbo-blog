@@ -1,6 +1,10 @@
 import { render, fireEvent, screen } from '@testing-library/react'
-import { Chip } from '@turbo-blog/web-ui'
-import { TurboPostsFilter, TurboPostList, TurboPost } from '.'
+import {
+  Chip,
+  TurboPostsFilter,
+  TurboPost,
+  TurboPostList,
+} from '@turbo-blog/web-ui'
 import { IFilter, ITurboPost } from '@turbo-blog/types'
 
 describe('Chip', () => {
@@ -16,7 +20,7 @@ describe('Chip', () => {
   })
 })
 
-describe('TurboPostFilter', () => {
+describe('TurboPostsFilter', () => {
   const filters: IFilter[] = [
     {
       title: 'Filter',
@@ -33,14 +37,14 @@ describe('TurboPostFilter', () => {
 
   it('renders', () => {
     const { queryAllByText } = render(
-      <TurboPostsFilter title={''} filters={filters} />,
+      <TurboPostsFilter title="" filters={filters} />,
     )
     expect(queryAllByText('Filter')).toHaveLength(2)
   })
   it('clicks', () => {
     const handleClick = jest.fn((filter) => {})
     render(
-      <TurboPostsFilter filters={filters} title={''} onToggle={handleClick} />,
+      <TurboPostsFilter title="" filters={filters} onToggle={handleClick} />,
     )
     fireEvent.click(screen.getAllByText(/Filter/i)[0])
     expect(handleClick).toHaveBeenCalledTimes(1)
@@ -48,7 +52,7 @@ describe('TurboPostFilter', () => {
   it('dosent click', () => {
     const handleClick2 = jest.fn((filter) => {})
     render(
-      <TurboPostsFilter filters={filters} title={''} onToggle={handleClick2} />,
+      <TurboPostsFilter title="" filters={filters} onToggle={handleClick2} />,
     )
     fireEvent.click(screen.getByText(/Filter2/i))
     expect(handleClick2).toHaveBeenCalledTimes(0)

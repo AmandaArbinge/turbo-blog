@@ -1,4 +1,8 @@
-import { ITurboPostsApiPostsResult, ITurboPostsApiPost } from './types'
+import {
+  ITurboPostsApiPostsResult,
+  ITurboPostsApiPost,
+  ITurboPostsApiCreatePostResult,
+} from './types'
 import { ITurboPost } from '@turbo-blog/types'
 
 export const turboPostTransformer = (response: any) => {
@@ -13,6 +17,23 @@ export const turboPostsTransformer = (response: any) => {
       jsonToTurboPosts(apiPost),
     )
   })
+}
+
+export const addTurboTransformer = (response: any) => {
+  return response.json().then((data: ITurboPostsApiCreatePostResult) => {
+    return jsonAddToTurboPost(data)
+  })
+}
+
+export const jsonAddToTurboPost = (
+  json: ITurboPostsApiCreatePostResult,
+): ITurboPost => {
+  return {
+    id: json.id,
+    heading: json.title,
+    content: json.body,
+    tags: json.tags,
+  }
 }
 
 export const jsonToTurboPosts = (json: ITurboPostsApiPost): ITurboPost => {
