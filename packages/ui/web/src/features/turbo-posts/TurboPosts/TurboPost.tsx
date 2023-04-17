@@ -25,7 +25,7 @@ export const TurboPost: React.FC<ITurboPostProps> = ({
       <article className={contentboxClassName}>
         <h1 className={headingClassName}>{heading}</h1>
         <p className={contentClassName}>{content}</p>
-        <p className={tagsClassName}>{tags + '   '}</p>
+        <p className={tagsClassName}>{tags}</p>
       </article>
     </>
   )
