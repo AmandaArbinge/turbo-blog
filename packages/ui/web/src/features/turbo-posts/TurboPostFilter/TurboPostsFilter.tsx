@@ -28,6 +28,7 @@ export const TurboPostsFilter: React.FC<ITurboPostsFilterProps> = ({
     'align-items: center',
     'flex space-x-4',
     'text-center',
+    'pb-8',
   )
 
   return (

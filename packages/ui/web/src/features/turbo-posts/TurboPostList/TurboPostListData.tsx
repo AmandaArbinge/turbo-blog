@@ -1,4 +1,3 @@
-import React from 'react'
 import { ITurboPost } from '@turbo-blog/types'
 
 export const Postdata: ITurboPost[] = [

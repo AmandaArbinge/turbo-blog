@@ -69,7 +69,7 @@ export const TurboPostsFilterableList: React.FC<FilterableListProps> = ({
 
   return (
     <>
-      <div className={'pb-8'}>
+      <div>
         <TurboPostsFilter
           onToggle={(filter) => {
             onToggle(filter)

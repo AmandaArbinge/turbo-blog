@@ -25,7 +25,7 @@ describe('TurboPostsFilterableList', () => {
       queryAllByText('He was an expert but not in a discipline'),
     ).toHaveLength(1)
 
-    fireEvent.click(screen.getByText('history'))
+    fireEvent.click(screen.getByRole('button', { name: 'history' }))
     expect(queryAllByText('His mother had always taught him')).toHaveLength(1)
     expect(
       queryAllByText('He was an expert but not in a discipline'),
@@ -44,7 +44,7 @@ describe('TurboPostsFilterableList', () => {
       queryAllByText('He was an expert but not in a discipline'),
     ).toHaveLength(1)
 
-    fireEvent.click(screen.getByText('history'))
+    fireEvent.click(screen.getByRole('button', { name: 'history' }))
 
     expect(queryAllByText('His mother had always taught him')).toHaveLength(1)
     expect(
