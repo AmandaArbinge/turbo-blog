@@ -49,7 +49,7 @@ export const TurboPostsFilter: React.FC<FilterProps> = ({ posts }) => {
 
   return (
     <>
-      <div className={'pb-8'}>
+      <div>
         <TurboPostsFilterUI
           onToggle={(filter) => {
             onToggle(filter)

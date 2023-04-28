@@ -9,7 +9,11 @@ export interface ITurboPostProps {
 
 const headingClassName = clsx('text-lg', 'text-center')
 const contentClassName = clsx('text-sm', 'text-center', 'margin-bottom:0px')
-const tagsClassName = clsx('text-sm', 'text-center', 'font-semibold')
+const tagsClassName = clsx(
+  'align-items: start',
+  'flex space-x-4',
+  'text-center',
+)
 
 const contentboxClassName = clsx('h-100 w-60', 'border p-4')
 
@@ -25,7 +29,9 @@ export const TurboPost: React.FC<ITurboPostProps> = ({
       <article className={contentboxClassName}>
         <h1 className={headingClassName}>{heading}</h1>
         <p className={contentClassName}>{content}</p>
-        <p className={tagsClassName}>{tags}</p>
+        <div className={tagsClassName}>
+          {tags && tags.map((tag) => <p key={tag}>{tag && tag + ' '}</p>)}
+        </div>
       </article>
     </>
   )
