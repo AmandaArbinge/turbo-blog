@@ -24,7 +24,8 @@
     "deploy:storybook": "yarn netlify deploy -s turbo-blog-storybook-basic -d storybook-static"
   },
   "dependencies": {
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "@turbo-blog/turbo-posts-api": "*"
   },
   "devDependencies": {
     "react-hook-form": "7.34.2",
