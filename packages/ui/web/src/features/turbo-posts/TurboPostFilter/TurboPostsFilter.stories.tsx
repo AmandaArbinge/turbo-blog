@@ -4,7 +4,7 @@ import React from 'react'
 import { storyBook1Filter, storyBook2Filter } from './TurboPostsFilterData'
 
 export default {
-  title: '/TurboPostsFilter',
+  title: 'TurboPost/TurboPostsFilter',
   component: TurboPostsFilter,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

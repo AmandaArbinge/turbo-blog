@@ -3,7 +3,7 @@ import { TurboPostList } from './TurboPostList'
 import { Postdata } from './TurboPostListData'
 
 export default {
-  title: '/TurboPostList',
+  title: 'TurboPost/TurboPostList',
   component: TurboPostList,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { TurboPost } from './TurboPost'
 
 export default {
-  title: '/TurboPosts',
+  title: 'TurboPost/TurboPosts',
   component: TurboPost,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

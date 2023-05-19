@@ -60,7 +60,7 @@ In this task we solve this by creating a file called [id].tsx. What is an altern
 
 There are two ways (at least) to do this. Either using the Link component or programmatically using the router. What are pros and cons of either? Bonus: What do you get automatically when using Link that you have to do manually using the router. (hint: it increases perceived performance)
 
-Router.push push to the location without creating <a> tag which makes the links not detectable by web crawlers. Link does create an <a> tag. Will navigate without reloading the page like a single page app.
+Router.push push to the location without creating <a> tag which makes the links not detectable by web crawlers. Link does create an <a> tag. 
 
 Part 4: Redux Toolkit
 When do you need a global state manager like RTK?
